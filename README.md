@@ -43,3 +43,25 @@ def returning_prices(basket):
         total_prices_basket.append(sum(price_of_each_item))
         return total_prices_basket
 print(returning_prices(['eggs','rice','Flour']))
+Items_discount = {'eggs':20,'rice':32,'flour':5}
+items_price = {'eggs':5,'rice':55,'flour':60}
+def returning_prices(basket):
+    total_prices_basket=[]
+    
+    for j in basket:
+        price_of_each_item=[]
+        for i in j.keys():
+            
+            if i in items_price.keys():
+                price_of_item = items_price[i]
+                discount = Items_discount[i]
+                price_after_disc = price_of_item*(1-discount/100)
+                price_of_each_item.append(price_after_disc*j[i])
+                
+            else:
+                break;
+        total_prices_basket.append(sum(price_of_each_item))
+        total_prices_basket.sort(key=None, reverse=True)
+    return total_prices_basket
+basket=[{'eggs':5,'rice':2},{'flour':5,'rice':2},]
+print(returning_prices(basket))
