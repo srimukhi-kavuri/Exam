@@ -57,3 +57,13 @@ object = shopping_basket(basket)
 j=object.returning_prices()
 print(j)
 
+   
+                else:
+                    break;
+            total_prices_basket.append(sum(price_of_each_item))
+            total_prices_basket.sort(key=None, reverse=True)
+        return total_prices_basket
+basket=[{'eggs':5,'rice':2},{'flour':5,'rice':2},{'rice':20},{'sugar':20}]
+object = shopping_basket(basket)
+j=object.returning_prices()
+print(j)
